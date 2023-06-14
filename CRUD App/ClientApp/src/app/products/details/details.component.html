@@ -1,0 +1,24 @@
+<div class="container">
+  <br />
+  <h3>Product Details</h3>
+  <br />
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <!--{{product | json}}-->
+          <h4>{{ productResult.productName }}</h4>
+        </div>
+        <div class="col text-right">
+          <a href="#" routerLink="/products/list" class="btn btn-secondary btn-sm">Back To Products List</a>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>ProductId:</b> {{ productResult.productId }}</li>
+      <!--<li class="list-group-item"><b>Shirt No:</b></li>-->
+      <li class="list-group-item"><b>ProductPrice:</b> {{ productResult.productPrice }}</li>
+      <li class="list-group-item"><b>CategoryId:</b> {{ productResult.categoryId }}</li>
+    </ul>
+  </div>
+</div>

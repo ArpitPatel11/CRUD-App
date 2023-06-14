@@ -1,0 +1,32 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Products</h3>
+    </div>
+    <div class="col text-end">
+      <a href="#" routerLink="/products/create/" class="btn btn-success btn-sm">Create New</a>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-sm">
+    <tr>
+      <th>CategoryId</th>
+      <th>ProductId</th>
+      <th>ProductName</th>
+      <th>ProductPrice</th>
+      <th width="200px">Button</th>
+    </tr>
+    <tr *ngFor="let result of listproducts">
+      <td>{{result.categoryId}}</td>
+      <td>{{result.productId}}</td>
+      <td>{{result.productName}}</td>
+      <td>{{result.productPrice}}</td>
+      <td class="text-right">
+        <a href="#" [routerLink]="['/products/', result.productId, 'details']" class="btn btn-info">View</a>
+        <a href="#" [routerLink]="['/products/', result.productId, 'edit']" class="btn btn-info">Edit</a>
+        <button type="button" (click)="deleteProduct(result.productId)" class="btn btn-info">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
